@@ -62,9 +62,9 @@ namespace Mailman
                 {
                     new Personalization
                     {
-                        To = e.To.Any() ? e.To.Select(x => new Person { Email = x }).ToArray() : null,
-                        Cc = e.Cc.Any() ? e.Cc.Select(x => new Person { Email = x }).ToArray() : null,
-                        Bcc = e.Bcc.Any() ? e.Bcc.Select(x => new Person { Email = x }).ToArray() : null
+                        To = e.To != null && e.To.Any() ? e.To.Select(x => new Person { Email = x }).ToArray() : null,
+                        Cc = e.Cc != null && e.Cc.Any() ? e.Cc.Select(x => new Person { Email = x }).ToArray() : null,
+                        Bcc = e.Bcc != null && e.Bcc.Any() ? e.Bcc.Select(x => new Person { Email = x }).ToArray() : null
                     }
                 }
             };

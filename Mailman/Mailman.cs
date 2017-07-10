@@ -18,7 +18,9 @@ namespace Mailman
                 throw new InvalidEmailException("Both email subject and body are ampty.");
 
             if (!IsValidEmail(e.From)) throw new InvalidEmailException($"From: {e.From} is not a valid email.");
-            if (!e.To.Any() && !e.Cc.Any() && !e.Bcc.Any()) throw new InvalidEmailException("No recipients supplied.");
+            if ((e.To == null || !e.To.Any()) && 
+                (e.Cc == null || !e.Cc.Any()) && 
+                (e.Bcc == null || !e.Bcc.Any()) ) throw new InvalidEmailException("No recipients supplied. Please specify To, Cc, or Bcc");
 
             CheckEmails("To", e.To);
             CheckEmails("Cc", e.Cc);
@@ -32,7 +34,7 @@ namespace Mailman
                 throw new InvalidEmailException($"{field}: Email {invalid} is not a valid email.");
         }
 
-        private static string GetInvalidEmail(IEnumerable<string> emails) => emails.FirstOrDefault(e => !IsValidEmail(e));
+        private static string GetInvalidEmail(IEnumerable<string> emails) => emails?.FirstOrDefault(e => !IsValidEmail(e));
 
         private static bool IsValidEmail(string email) =>
             Regex.IsMatch(email,

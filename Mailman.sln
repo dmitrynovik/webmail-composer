@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailman", "Mailman\Mailman.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailman.Tests", "Mailman.Test\Mailman.Tests.csproj", "{6EE631ED-5835-4394-AFBE-1585DD4F37C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailman.Web", "Mailman.Web\Mailman.Web.csproj", "{DD978014-7DD2-4C8C-8144-BF48B105A3F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6EE631ED-5835-4394-AFBE-1585DD4F37C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EE631ED-5835-4394-AFBE-1585DD4F37C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EE631ED-5835-4394-AFBE-1585DD4F37C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD978014-7DD2-4C8C-8144-BF48B105A3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD978014-7DD2-4C8C-8144-BF48B105A3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD978014-7DD2-4C8C-8144-BF48B105A3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD978014-7DD2-4C8C-8144-BF48B105A3F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

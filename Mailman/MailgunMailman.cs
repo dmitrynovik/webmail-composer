@@ -38,9 +38,11 @@ namespace Mailman
             request.AddParameter("domain", "sandbox6fffdad805c4466a929f80afd6405f22.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", e.From);
-            request.AddParameter("to", string.Join(",", e.To));
             request.AddParameter("subject", e.Subject);
             request.AddParameter("text", e.Body);
+            if (e.To != null) request.AddParameter("to", string.Join(",", e.To));
+            if (e.Cc != null) request.AddParameter("cc", string.Join(",", e.Cc));
+            if (e.Bcc != null) request.AddParameter("bcc", string.Join(",", e.Bcc));
             request.Method = Method.POST;
 
             return client.Execute(request);

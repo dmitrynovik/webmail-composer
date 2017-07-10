@@ -31,6 +31,14 @@ namespace Mailman
                 {
                     return sender.Send(e);
                 }
+                catch (ArgumentNullException)
+                {
+                    throw;
+                }
+                catch (InvalidEmailException)
+                {
+                    throw;
+                }
                 catch (Exception ex)
                 {
                     Trace.TraceError(ex.ToString());

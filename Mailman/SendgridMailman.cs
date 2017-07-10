@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using Newtonsoft.Json;
 using RestSharp;
-using RestSharp.Serializers;
 
 namespace Mailman
 { 
